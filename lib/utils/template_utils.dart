@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 
 class WorkoutTemplate{
@@ -26,31 +25,37 @@ class WorkoutTemplateContainer extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(15),
-      ),    
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //template name
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Text(template.name, style: TextStyle(color: Colors.white, fontSize: 18),),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: template.exerciseList.map((exercise){
-                return Text('${exercise.setsAndReps.length} x ${exercise.name}', 
-                  style: TextStyle(color: Colors.grey, fontSize: 12),
-                );
-              }).toList(),
-            )
-          ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 25),
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(15),
+        ),    
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 20, left: 20, right:  20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //template name
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(template.name, style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.more_vert))
+                  ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: template.exerciseList.map((exercise){
+                  return Text('${exercise.setsAndReps.length} x ${exercise.name}', 
+                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                  );
+                }).toList(),
+              )
+            ],
+          ),
         ),
       ),
     );

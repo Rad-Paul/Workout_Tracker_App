@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:workout_tracker_app/req/templateTracker.dart';
-import 'package:workout_tracker_app/req/workoutTracker.dart';
 import 'package:provider/provider.dart';
 import 'package:workout_tracker_app/utils/template_utils.dart';
 
@@ -30,6 +29,16 @@ class Workout extends StatelessWidget{
                 ],
               ),
               UserTemplates(),
+
+              //Sample Templates Text
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Row(
+                  children: [
+                    Text('SAMPLE TEMPLATES', style: TextStyle(color: Colors.grey, fontSize: 12)),
+                  ],
+                ),
+              ),
               SampleTemplates(),
             ],
           ),

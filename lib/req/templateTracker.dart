@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:workout_tracker_app/pages/userHome.dart';
 import '../utils/template_utils.dart';
 class Templatetracker with ChangeNotifier{
   static final List<WorkoutTemplate> _sampleTemplates = [
     WorkoutTemplate(name: 'Legs', 
       exerciseList:[
+        ExerciseTemplate(name: 'Squat', setsAndReps:[12, 10, 8], weight: 50),
+        ExerciseTemplate(name: 'Leg Extension', setsAndReps: [15, 15, 12], weight: 40),
+        ExerciseTemplate(name: 'Hip Raises', setsAndReps: [12, 10, 8], weight: 20),
+        ExerciseTemplate(name: 'Squat', setsAndReps:[12, 10, 8], weight: 50),
+        ExerciseTemplate(name: 'Leg Extension', setsAndReps: [15, 15, 12], weight: 40),
+        ExerciseTemplate(name: 'Hip Raises', setsAndReps: [12, 10, 8], weight: 20),
         ExerciseTemplate(name: 'Squat', setsAndReps:[12, 10, 8], weight: 50),
         ExerciseTemplate(name: 'Leg Extension', setsAndReps: [15, 15, 12], weight: 40),
         ExerciseTemplate(name: 'Hip Raises', setsAndReps: [12, 10, 8], weight: 20),
