@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:workout_tracker_app/req/templateTracker.dart';
 import './pages/userHome.dart';
 import './pages/userHistory.dart';
 import './pages/workout.dart';
 
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(create: (context) => Templatetracker(),
+    child: const MyApp()
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -43,6 +50,7 @@ class UserPage extends StatefulWidget{
   State<UserPage> createState() => _UserPageState();
 }
 class _UserPageState extends State<UserPage> {
+  final String title = 'Test';
   int _selectedIndex = 0;
 
   void updateLocation(int index){
@@ -54,7 +62,7 @@ class _UserPageState extends State<UserPage> {
   List<Widget> pages = [
     UserHome(),
     UserHistory(),
-    Workout()
+    Workout(),
   ];
 
   @override
