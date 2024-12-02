@@ -109,16 +109,3 @@ class _UserTemplatesState extends State<UserTemplates> {
     },);
   }
 }
-
-class CreateNewTemplate extends StatefulWidget{
-  @override
-  State<CreateNewTemplate> createState() => _CreateNewTemplateState();
-}
-
-class _CreateNewTemplateState extends State<CreateNewTemplate> {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
-}
