@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workout_tracker_app/req/templateTracker.dart';
 import 'package:provider/provider.dart';
+import 'package:workout_tracker_app/utils/newTemplate_utils.dart';
 import 'package:workout_tracker_app/utils/template_utils.dart';
 
 class Workout extends StatelessWidget{
@@ -25,7 +26,14 @@ class Workout extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('MY TEMPLATES', style: TextStyle(color: Colors.grey, fontSize: 12)),
-                  IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+
+                  //add template button
+                  IconButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => CreateNewTemplatePage()));
+                    }, 
+                    icon: Icon(Icons.add)
+                  ),
                 ],
               ),
               UserTemplates(),
